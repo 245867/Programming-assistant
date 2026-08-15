@@ -17,6 +17,7 @@ tmp/
 发布/
 app.japk
 *.exe
+!编程助手.exe
 monitor_policy_plugin.exp
 monitor_policy_plugin.lib
 monitor_policy_plugin.obj
