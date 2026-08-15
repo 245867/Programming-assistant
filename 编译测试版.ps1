@@ -4,7 +4,17 @@ $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $exeItem = Get-ChildItem -LiteralPath $root -Filter '*.exe' -File -ErrorAction SilentlyContinue | Select-Object -First 1
 $exe = if ($exeItem) { $exeItem.FullName } else { $null }
 $solution = Join-Path $root 'project\ProgrammerAssistant.sln'
-$msbuild = 'D:\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe'
+$msbuildCandidates = @(
+    (Get-Command msbuild -ErrorAction SilentlyContinue).Source,
+    "$env:ProgramFiles\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe",
+    "$env:ProgramFiles\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe",
+    "$env:ProgramFiles\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe",
+    "$env:ProgramFiles\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe"
+) | Where-Object { $_ -and (Test-Path -LiteralPath $_) }
+$msbuild = $msbuildCandidates | Select-Object -First 1
+if (-not $msbuild) {
+    throw 'MSBuild.exe was not found. Install Visual Studio with the Desktop C++ workload.'
+}
 
 $exeFull = [IO.Path]::GetFullPath($exe)
 $oldPids = @(Get-Process -ErrorAction SilentlyContinue | ForEach-Object {

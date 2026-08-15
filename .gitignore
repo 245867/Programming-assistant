@@ -34,3 +34,13 @@ pdf-fix-work/
 mfc-preview*.png
 1.png
 2.png
+
+# Private working notes and machine-specific packaging files
+提示词.md
+对话.bat
+Whisper接口返回说明.md
+项目文档.md
+jadepack.config.json
+web/index - 副本.html
+JadeView.h
+JadeView_x64.lib
