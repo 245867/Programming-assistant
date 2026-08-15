@@ -1,0 +1,4 @@
+// Resources for ProgrammerAssistant
+IDI_MAIN_ICON      ICON    "b6.ico"
+JADEVIEW_DLL       RCDATA  "..\\JadeView_x64.dll"
+APP_JAPK           RCDATA  "..\\app.japk"

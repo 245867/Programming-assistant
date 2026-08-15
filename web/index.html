@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jade 编程助手</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="b6.ico">
+</head>
+<body data-theme="glass">
+  <div class="app">
+    <header class="titlebar">
+      <div class="title-drag">
+        <img class="app-icon" src="b6.ico" alt="">
+        <div class="title-texts">
+          <div class="app-name">Jade 编程助手 version 1.3</div>
+          <span class="title-sep">|</span>
+          <div class="app-subtitle" id="activeSubtitle"></div>
+        </div>
+      </div>
+      <div class="title-actions">
+        <!-- <button class="icon-btn" id="runInternalTests" title="内部自测" aria-label="内部自测">
+          <svg viewBox="0 0 24 24"><path d="M9 3h6M10 3v5l-5 9a3 3 0 0 0 2.6 4.5h8.8A3 3 0 0 0 19 17l-5-9V3"/><path d="M8 15h8"/></svg>
+        </button> -->
+        <button class="icon-btn" id="themeToggle" title="切换半透明 / 纯黑" aria-label="切换主题">
+          <svg viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 7 7 0 0 1-9-9Z"/></svg>
+        </button>
+        <button class="win-btn" data-window="minimize" title="最小化">-</button>
+        <button class="win-btn" data-window="maximize" title="最大化">□</button>
+        <button class="win-btn close" data-window="close" title="关闭">×</button>
+      </div>
+    </header>
+
+    <div class="layout">
+      <aside class="sidebar">
+        <nav class="tool-list" id="toolList" jade-allow-contextmenu></nav>
+        <div class="side-bottom">
+          <button class="side-action" id="openSettings">
+            <img src="icons/settings.svg" width="18" height="18" style="display:inline;vertical-align:middle;margin-right:6px;border-radius:5px" alt="">设置
+          </button>
+          <button class="side-action" id="openAbout">
+            <img src="icons/about.svg" width="18" height="18" style="display:inline;vertical-align:middle;margin-right:6px;border-radius:5px" alt="">关于
+          </button>
+        </div>
+      </aside>
+
+      <main class="workspace">
+        <div class="tabs" id="tabs"></div>
+        <section class="page" id="page"></section>
+      </main>
+    </div>
+
+    <div class="context-menu" id="contextMenu">
+      <button data-action="parse-http-json" id="parseHttpJsonAction">解析响应 JSON 到新页</button>
+      <button data-action="new-instance">新建同类页面</button>
+      <button data-action="duplicate">复制当前页面</button>
+      <button data-action="close-instance">关闭页面</button>
+      <hr class="cmenu-sep">
+      <button data-action="close-others" id="closeOthersAction">关闭其他标签</button>
+      <button data-action="close-all-tabs" id="closeAllTabsAction">关闭全部标签</button>
+    </div>
+    <div class="context-menu" id="procContextMenu">
+      <button data-action="proc-kill" id="procKillAction">关闭进程</button>
+      <button data-action="proc-open" id="procOpenAction">定位文件夹</button>
+      <button data-action="proc-hexpid" id="procHexPidAction">显示16进制PID</button>
+      <button data-action="proc-icon" id="procIconAction">提取图标保存</button>
+      <button data-action="proc-copy">复制信息</button>
+    </div>
+    <div class="modal-mask" id="modalMask"></div>
+    <div class="modal" id="modal"></div>
+    <div class="shortcut-hint" id="shortcutHint">Ctrl+Enter 发送 | Ctrl+T 新建 | Ctrl+W 关闭 | Ctrl+Tab 切换</div>
+  </div>
+  <script src="modules/utils.js"></script>
+  <script src="modules/crypto.js"></script>
+  <script src="modules/http.js"></script>
+  <script src="modules/encoding.js"></script>
+  <script src="modules/ws.js"></script>
+  <script src="modules/yolo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="full" height="512px" version="1.1" viewBox="0 0 512 512" width="512px" xmlns="http://www.w3.org/2000/svg" xmlns:ev="http://www.w3.org/2001/xml-events" xmlns:xlink="http://www.w3.org/1999/xlink"><defs><style type="text/css"><![CDATA[
+.icon-white-bg { fill: #FFFFFF; }
+.icon-white-bg-soft { fill: #FAFAFA; }
+.icon-white-bg-warm { fill: #FFF8F5; }
+.icon-white-stroke-light { fill: none; stroke: #E0E0E0; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.icon-white-stroke-subtle { fill: none; stroke: #F0F0F0; stroke-width: 20; stroke-linecap: round; stroke-linejoin: round; opacity: 0.3; }
+.icon-fill-blue { fill: url(#wgrad-blue); }
+.icon-fill-coral { fill: url(#wgrad-coral); }
+.icon-fill-purple { fill: url(#wgrad-purple); }
+.icon-fill-emerald { fill: url(#wgrad-emerald); }
+.icon-fill-amber { fill: url(#wgrad-amber); }
+.icon-fill-rose { fill: url(#wgrad-rose); }
+.icon-fill-teal { fill: url(#wgrad-teal); }
+.icon-fill-indigo { fill: url(#wgrad-indigo); }
+.icon-fill-orange { fill: url(#wgrad-orange); }
+.icon-fill-deepblue { fill: url(#wgrad-deepblue); }
+.icon-fill-radial-blue { fill: url(#wgrad-radial-blue); }
+.icon-fill-radial-coral { fill: url(#wgrad-radial-coral); }
+.icon-stroke-blue { fill: none; stroke: url(#wgrad-blue); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-coral { fill: none; stroke: url(#wgrad-coral); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-purple { fill: none; stroke: url(#wgrad-purple); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-emerald { fill: none; stroke: url(#wgrad-emerald); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-amber { fill: none; stroke: url(#wgrad-amber); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-rose { fill: none; stroke: url(#wgrad-rose); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-indigo { fill: none; stroke: url(#wgrad-indigo); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-orange { fill: none; stroke: url(#wgrad-orange); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-deepblue { fill: none; stroke: url(#wgrad-deepblue); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-stroke-teal { fill: none; stroke: url(#wgrad-teal); stroke-width: 14; stroke-linecap: round; stroke-linejoin: round; }
+.icon-card-bg { fill: #FFFFFF; stroke: #E8E8E8; stroke-width: 3; }
+.icon-accent-red { fill: #EF5350; }
+.icon-accent-yellow { fill: #FDD835; }
+.icon-accent-green { fill: #66BB6A; }
+.icon-accent-blue { fill: #42A5F5; }
+.icon-accent-orange { fill: #FF7043; }
+.icon-dot { fill: #ffffff; }
+]]></style><linearGradient id="wgrad-blue" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#1565C0" /><stop offset="100%" stop-color="#42A5F5" /></linearGradient><linearGradient id="wgrad-coral" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#E53935" /><stop offset="100%" stop-color="#FF7043" /></linearGradient><linearGradient id="wgrad-purple" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#6A1B9A" /><stop offset="100%" stop-color="#AB47BC" /></linearGradient><linearGradient id="wgrad-emerald" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#00897B" /><stop offset="100%" stop-color="#26A69A" /></linearGradient><linearGradient id="wgrad-amber" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#F57F17" /><stop offset="100%" stop-color="#FFB300" /></linearGradient><linearGradient id="wgrad-rose" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#AD1457" /><stop offset="100%" stop-color="#EC407A" /></linearGradient><linearGradient id="wgrad-teal" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#00695C" /><stop offset="100%" stop-color="#009688" /></linearGradient><linearGradient id="wgrad-indigo" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#283593" /><stop offset="100%" stop-color="#5C6BC0" /></linearGradient><linearGradient id="wgrad-orange" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#D84315" /><stop offset="100%" stop-color="#FF8A65" /></linearGradient><linearGradient id="wgrad-deepblue" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#01579B" /><stop offset="100%" stop-color="#29B6F6" /></linearGradient><radialGradient cx="50%" cy="40%" id="wgrad-radial-blue" r="60%"><stop offset="0%" stop-color="#42A5F5" /><stop offset="100%" stop-color="#1565C0" /></radialGradient><radialGradient cx="50%" cy="40%" id="wgrad-radial-coral" r="60%"><stop offset="0%" stop-color="#FF7043" /><stop offset="100%" stop-color="#C62828" /></radialGradient></defs><rect class="icon-white-bg" height="512" rx="80" width="512" x="0" y="0" /><rect class="icon-card-bg" height="512" rx="80" width="512" x="0" y="0" /><rect fill="#F3E5F5" height="220" rx="20" width="140" x="30" y="146" /><rect fill="none" height="220" rx="20" stroke="#CE93D8" stroke-width="4" width="140" x="30" y="146" /><rect fill="#EDE7F6" height="220" rx="20" width="140" x="210" y="146" /><rect fill="none" height="220" rx="20" stroke="#9FA8DA" stroke-width="4" width="140" x="210" y="146" /><line opacity="0.7" stroke="#CE93D8" stroke-linecap="round" stroke-width="5" x1="50" x2="130" y1="181" y2="181" /><line opacity="0.7" stroke="#9FA8DA" stroke-linecap="round" stroke-width="5" x1="230" x2="310" y1="181" y2="181" /><line opacity="0.7" stroke="#CE93D8" stroke-linecap="round" stroke-width="5" x1="50" x2="130" y1="213" y2="213" /><line opacity="0.7" stroke="#9FA8DA" stroke-linecap="round" stroke-width="5" x1="230" x2="310" y1="213" y2="213" /><line opacity="0.7" stroke="#CE93D8" stroke-linecap="round" stroke-width="5" x1="50" x2="130" y1="245" y2="245" /><line opacity="0.7" stroke="#9FA8DA" stroke-linecap="round" stroke-width="5" x1="230" x2="310" y1="245" y2="245" /><line opacity="0.7" stroke="#CE93D8" stroke-linecap="round" stroke-width="5" x1="50" x2="130" y1="277" y2="277" /><line opacity="0.7" stroke="#9FA8DA" stroke-linecap="round" stroke-width="5" x1="230" x2="310" y1="277" y2="277" /><line opacity="0.7" stroke="#CE93D8" stroke-linecap="round" stroke-width="5" x1="50" x2="130" y1="309" y2="309" /><line opacity="0.7" stroke="#9FA8DA" stroke-linecap="round" stroke-width="5" x1="230" x2="310" y1="309" y2="309" /><line opacity="0.7" stroke="#CE93D8" stroke-linecap="round" stroke-width="5" x1="50" x2="130" y1="341" y2="341" /><line opacity="0.7" stroke="#9FA8DA" stroke-linecap="round" stroke-width="5" x1="230" x2="310" y1="341" y2="341" /><polygon class="icon-fill-purple" points="238,228 238,284 291,256" /></svg>

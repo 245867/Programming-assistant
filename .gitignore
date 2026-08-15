@@ -1,0 +1,36 @@
+# Visual Studio and local build output
+.vs/
+build/
+*.obj
+*.pdb
+*.ilk
+*.tlog
+*.idb
+*.recipe
+
+# Runtime state and diagnostics
+data/
+logs/
+tmp/
+
+# Local release material and generated packages
+发布/
+app.japk
+*.exe
+monitor_policy_plugin.exp
+monitor_policy_plugin.lib
+monitor_policy_plugin.obj
+
+# Local models, credentials, and experiments
+keys/
+*.pt
+*.onnx
+sdk/ncnn/
+beta/
+web2/
+pdf-fix-work/
+
+# Local scratch images
+mfc-preview*.png
+1.png
+2.png

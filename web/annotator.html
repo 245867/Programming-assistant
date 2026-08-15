@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOLO 标注工作台</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="b6.ico">
+</head>
+<body data-theme="glass" class="ann-body">
+  <div class="ann-app">
+    <!-- 顶部工具条 -->
+    <header class="ann-toolbar">
+      <div class="ann-tb-group">
+        <span class="ann-logo">🏷️ 标注</span>
+        <button class="ann-tool" data-tool="select" title="选择/移动 (Esc)"><span>▣</span>选择</button>
+        <button class="ann-tool" data-tool="draw" title="画框 (W)"><span>✏️</span>画框</button>
+      </div>
+      <div class="ann-tb-group">
+        <button class="ann-tool" data-act="fit" title="适应窗口 (F)"><span>⛶</span></button>
+        <button class="ann-tool" data-act="zoomout" title="缩小"><span>－</span></button>
+        <span class="ann-zoom" id="annZoom">100%</span>
+        <button class="ann-tool" data-act="zoomin" title="放大"><span>＋</span></button>
+        <button class="ann-tool" data-act="hide" title="隐藏/显示框 (H)"><span>👁</span></button>
+      </div>
+      <div class="ann-tb-group">
+        <button class="ann-tool" data-act="undo" title="撤销 (Ctrl+Z)"><span>↶</span></button>
+        <button class="ann-tool" data-act="redo" title="重做 (Ctrl+Y)"><span>↷</span></button>
+      </div>
+      <div class="ann-tb-group ann-tb-grow">
+        <span class="ann-imgname" id="annImgName">未打开文件夹</span>
+      </div>
+      <div class="ann-tb-group">
+        <label class="ann-check"><input type="checkbox" id="annAutoSave" checked> 切换自动保存</label>
+        <button class="ann-tool primary" data-act="save" title="保存 (Ctrl+S)"><span>💾</span>保存</button>
+        <button class="ann-tool" data-act="opendir" title="打开文件夹"><span>📂</span>文件夹</button>
+      </div>
+    </header>
+
+    <div class="ann-main">
+      <!-- 左：类别 -->
+      <aside class="ann-classes">
+        <div class="ann-panel-title">类别 <span id="annClsCount">0</span>
+          <button class="ann-mini-btn" id="annAddClass" title="新增类别">＋</button>
+        </div>
+        <div class="ann-class-list" id="annClassList"></div>
+        <div class="ann-panel-title">本图目标 <span id="annBoxCount">0</span></div>
+        <div class="ann-box-list" id="annBoxList"></div>
+      </aside>
+
+      <!-- 中：画布 -->
+      <section class="ann-canvas-host" id="annCanvasHost">
+        <canvas id="annCanvas"></canvas>
+        <div class="ann-empty" id="annEmpty">
+          <div class="ann-empty-ico">🖼️</div>
+          <div>打开一个图片文件夹开始标注</div>
+          <button class="ann-tool primary" data-act="opendir" style="margin-top:14px">📂 选择文件夹</button>
+        </div>
+        <div class="ann-hud" id="annHud"></div>
+      </section>
+
+      <!-- 右：图片列表 -->
+      <aside class="ann-images">
+        <div class="ann-panel-title">图片 <span id="annImgCount">0</span>
+          <span class="ann-labeled-count" id="annLabeledCount"></span>
+        </div>
+        <div class="ann-image-list" id="annImageList"></div>
+      </aside>
+    </div>
+
+    <footer class="ann-status" id="annStatus">
+      <span id="annStatusLeft">就绪</span>
+      <span id="annStatusRight"></span>
+    </footer>
+  </div>
+  <script src="modules/utils.js"></script>
+  <script src="modules/annotator.js"></script>
+</body>
+</html>

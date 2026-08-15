@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<svg baseProfile="full" height="512px" version="1.1" viewBox="0 0 512 512" width="512px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><defs>
+<linearGradient id="ywgrad-blue" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#1565C0" /><stop offset="100%" stop-color="#29B6F6" /></linearGradient>
+<linearGradient id="ywgrad-coral" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#E53935" /><stop offset="100%" stop-color="#FF7043" /></linearGradient>
+<linearGradient id="ywgrad-emerald" x1="0%" x2="100%" y1="0%" y2="100%"><stop offset="0%" stop-color="#00897B" /><stop offset="100%" stop-color="#26A69A" /></linearGradient>
+</defs>
+<rect fill="#FFFFFF" height="512" rx="80" width="512" x="0" y="0" />
+<rect fill="none" stroke="#E8E8E8" stroke-width="3" height="509" rx="79" width="509" x="1.5" y="1.5" />
+<!-- scan corner brackets -->
+<g fill="none" stroke="url(#ywgrad-blue)" stroke-width="20" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M96 148 V108 Q96 96 108 96 H148" />
+  <path d="M364 96 H404 Q416 96 416 108 V148" />
+  <path d="M416 364 V404 Q416 416 404 416 H364" />
+  <path d="M148 416 H108 Q96 416 96 404 V364" />
+</g>
+<!-- detected object box (coral) with label tag -->
+<rect x="150" y="196" width="150" height="180" rx="10" fill="none" stroke="url(#ywgrad-coral)" stroke-width="16" />
+<rect x="150" y="160" width="104" height="40" rx="8" fill="url(#ywgrad-coral)" />
+<circle cx="176" cy="180" r="7" fill="#ffffff" />
+<rect x="192" y="174" width="48" height="12" rx="6" fill="#ffffff" opacity="0.95" />
+<!-- second detected box (emerald) -->
+<rect x="286" y="252" width="94" height="124" rx="9" fill="none" stroke="url(#ywgrad-emerald)" stroke-width="14" />
+<rect x="286" y="224" width="70" height="30" rx="7" fill="url(#ywgrad-emerald)" />
+<!-- center crosshair -->
+<g stroke="#1565C0" stroke-width="10" stroke-linecap="round" opacity="0.85">
+  <line x1="256" y1="286" x2="256" y2="316" />
+  <line x1="241" y1="301" x2="271" y2="301" />
+</g>
+</svg>

@@ -1,0 +1,14 @@
+// ═══════════════ Encoding Tool ═══════════════
+// ═══════════════════════ ENCODING FIXED ═══════════════════════
+  function renderEncoding(page) { var d=page.data;
+    $('page').innerHTML='<div class="tool-page">'+renderHero(page,
+      '<button class="btn small" id="copyEncoding">'+tt('复制结果')+'</button><button class="btn small" id="convertAllEncoding">'+tt('一键全转')+'</button><button class="btn primary" id="convertEncoding">'+tt('转换')+'</button>')+
+      '<div class="grid"><div class="panel-card span-5"><div class="panel-title">Input</div>'+
+      '<textarea id="encodingInput" class="mono" style="min-height:120px">'+esc(d.input)+'</textarea>'+
+      '<label>转换 / 校验类型</label><div class="nice-select-wrap"><select id="encodingTarget" class="nice-select">'+transforms.map(function(e){return'<option value="'+e.id+'">'+e.name+'</option>';}).join('')+'</select></div></div>'+
+      '<div class="panel-card span-7"><div class="panel-title">Output</div><textarea id="encodingResult" class="mono" readonly style="min-height:100px">'+esc(d.result)+'</textarea>'+
+      '<div class="http-code-bar" style="margin-top:6px"><label class="lang-pill"><input type="radio" name="encCodeLang" value="e" '+(d.encCodeLang==='e'?'checked':'')+'><img class="pill-icon" src="E.svg" onerror="this.style.display=\'none\'"><span class="pill-label">'+tt('易语言')+'</span></label><label class="lang-pill"><input type="radio" name="encCodeLang" value="py" '+(d.encCodeLang==='py'?'checked':'')+'><img class="pill-icon" src="python.svg" onerror="this.style.display=\'none\'"><span class="pill-label">Python</span></label><label class="lang-pill"><input type="radio" name="encCodeLang" value="js" '+(d.encCodeLang==='js'?'checked':'')+'><img class="pill-icon" src="folder_type_js.svg" onerror="this.style.display=\'none\'"><span class="pill-label">JS</span></label><label class="lang-pill"><input type="radio" name="encCodeLang" value="cpp" '+(d.encCodeLang==='cpp'?'checked':'')+'><img class="pill-icon" src="2.ico"><span class="pill-label">C++</span></label><label class="lang-pill"><input type="radio" name="encCodeLang" value="go" '+(d.encCodeLang==='go'?'checked':'')+'><img class="pill-icon" src="go.svg" onerror="this.style.display=\'none\'"><span class="pill-label">Go</span></label><label class="lang-pill"><input type="radio" name="encCodeLang" value="rs" '+(d.encCodeLang==='rs'?'checked':'')+'><img class="pill-icon" src="rust.svg" onerror="this.style.display=\'none\'"><span class="pill-label">Rust</span></label><button class="btn copy-code-btn" id="copyEncCode">'+tt('复制代码')+'</button></div></div>'+
+      '<div class="panel-card span-12"><div class="panel-title">All Transform Preview</div>'+
+      '<textarea id="encodingAllResult" class="mono" readonly style="min-height:370px;max-height:430px;overflow:auto">'+(d.allResult||'点击"一键全转"生成编码、Base、Hash 预览。')+'</textarea></div></div></div>';
+    if($('encodingTarget'))$('encodingTarget').value=d.target;
+  }
