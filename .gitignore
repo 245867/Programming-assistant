@@ -14,10 +14,12 @@ logs/
 tmp/
 
 # Local release material and generated packages
-发布/
+发布/*
+!发布/
 app.japk
 *.exe
 !编程助手.exe
+!发布/编程助手1.3.exe
 monitor_policy_plugin.exp
 monitor_policy_plugin.lib
 monitor_policy_plugin.obj
