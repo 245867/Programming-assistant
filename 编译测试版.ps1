@@ -4,13 +4,29 @@ $root = Split-Path -Parent $MyInvocation.MyCommand.Path
 $exeItem = Get-ChildItem -LiteralPath $root -Filter '*.exe' -File -ErrorAction SilentlyContinue | Select-Object -First 1
 $exe = if ($exeItem) { $exeItem.FullName } else { $null }
 $solution = Join-Path $root 'project\ProgrammerAssistant.sln'
-$msbuildCandidates = @(
-    (Get-Command msbuild -ErrorAction SilentlyContinue).Source,
-    "$env:ProgramFiles\Microsoft Visual Studio\2022\Community\MSBuild\Current\Bin\MSBuild.exe",
-    "$env:ProgramFiles\Microsoft Visual Studio\2022\Professional\MSBuild\Current\Bin\MSBuild.exe",
-    "$env:ProgramFiles\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\MSBuild.exe",
-    "$env:ProgramFiles\Microsoft Visual Studio\2019\Professional\MSBuild\Current\Bin\MSBuild.exe"
+$msbuildCandidates = @((Get-Command msbuild -ErrorAction SilentlyContinue).Source)
+$vswherePaths = @(
+    "${env:ProgramFiles(x86)}\Microsoft Visual Studio\Installer\vswhere.exe",
+    "$env:ProgramFiles\Microsoft Visual Studio\Installer\vswhere.exe"
+)
+foreach ($vswhere in $vswherePaths) {
+    if (-not (Test-Path -LiteralPath $vswhere)) { continue }
+    $installPath = & $vswhere -latest -products * -requires Microsoft.Component.MSBuild -property installationPath | Select-Object -First 1
+    if ($installPath) { $msbuildCandidates += Join-Path $installPath.Trim() 'MSBuild\Current\Bin\MSBuild.exe' }
+}
+
+$vsRoots = @(
+    "$env:ProgramFiles\Microsoft Visual Studio",
+    "${env:ProgramFiles(x86)}\Microsoft Visual Studio",
+    'D:\Microsoft Visual Studio'
 ) | Where-Object { $_ -and (Test-Path -LiteralPath $_) }
+foreach ($vsRoot in $vsRoots) {
+    $msbuildCandidates += Get-ChildItem -LiteralPath $vsRoot -Filter 'MSBuild.exe' -Recurse -File -ErrorAction SilentlyContinue |
+        Where-Object { $_.FullName -match '\\MSBuild\\Current\\Bin\\MSBuild\.exe$' } |
+        ForEach-Object FullName
+}
+
+$msbuildCandidates = $msbuildCandidates | Where-Object { $_ -and (Test-Path -LiteralPath $_) } | Select-Object -Unique
 $msbuild = $msbuildCandidates | Select-Object -First 1
 if (-not $msbuild) {
     throw 'MSBuild.exe was not found. Install Visual Studio with the Desktop C++ workload.'
